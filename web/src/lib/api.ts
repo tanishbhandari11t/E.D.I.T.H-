@@ -1346,6 +1346,8 @@ export interface AuthMeResponse {
   org_id: string;
   provider: string;
   expires_at: number;
+  /** When set, dashboard is locked to this Hermes profile (no switcher). */
+  profile?: string;
 }
 
 export interface ActionResponse {

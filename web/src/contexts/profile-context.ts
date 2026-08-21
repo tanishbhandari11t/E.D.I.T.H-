@@ -9,6 +9,8 @@ export interface ProfileContextValue {
   /** Known profile names (includes "default"). */
   profiles: string[];
   setProfile: (name: string) => void;
+  /** When true, auth bound the user to ``profile`` — switcher must hide. */
+  profileLocked: boolean;
 }
 
 export const ProfileContext = createContext<ProfileContextValue>({
@@ -16,4 +18,5 @@ export const ProfileContext = createContext<ProfileContextValue>({
   currentProfile: "default",
   profiles: [],
   setProfile: () => {},
+  profileLocked: false,
 });

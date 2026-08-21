@@ -140,6 +140,7 @@ export function AuthWidget({ className }: AuthWidgetProps) {
         </span>
         <span className="truncate text-muted-foreground/70">
           via {me.provider}
+          {me.profile ? ` · ${me.profile}` : ""}
         </span>
       </div>
       <button

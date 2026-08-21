@@ -19,25 +19,16 @@ import { ProfileContext } from "@/contexts/profile-context";
  * module so `fetchJSON` transparently appends it to the profile-scoped
  * endpoint families. "" = the dashboard's own profile.
  *
- * Why state-first instead of URL-first: sidebar nav links are bare paths
- * (`/config`, `/skills`). A URL-derived scope would silently reset to the
- * dashboard's own profile on every nav click — the switcher would LOOK
- * global while normal navigation dropped the write target. With state as
- * truth, the effect below re-asserts `?profile=` onto the new location
- * after each navigation, so the scope survives nav and stays deep-linkable.
- *
- * This exists because "Set as active" on the Profiles page historically only
- * flipped the sticky active_profile file (future CLI/gateway runs). The
- * switcher is the dashboard's write-target selector for Chat and management
- * pages. We now sync the switcher when the sticky active profile differs from
- * the dashboard process on load, and ProfilesPage updates the switcher when
- * you click "Set as active".
+ * When ``/api/auth/me`` returns a non-empty ``profile``, that value is
+ * locked for the session (Jimmy multi-user): the switcher is hidden and
+ * ``setProfile`` is a no-op so users cannot open another Jimmy's chats.
  */
 export function ProfileProvider({ children }: { children: ReactNode }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const { pathname } = useLocation();
   const [profiles, setProfiles] = useState<string[]>([]);
   const [currentProfile, setCurrentProfile] = useState("default");
+  const [profileLocked, setProfileLocked] = useState(false);
 
   // Initial value comes from the URL (deep link / refresh / unified-launch
   // preselect); afterwards state leads and the URL follows.
@@ -52,14 +43,16 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
   // A profile param arriving via in-app navigation (e.g. the Profiles
   // page's "Manage skills & tools" linking to /skills?profile=X) must win
   // over current state — it's an explicit scope request.
+  // When locked, ignore foreign URL profiles.
   const urlProfile = searchParams.get("profile");
   useEffect(() => {
+    if (profileLocked) return;
     if (urlProfile !== null && urlProfile !== profile) {
       setManagementProfile(urlProfile);
       setProfileState(urlProfile);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [urlProfile]);
+  }, [urlProfile, profileLocked]);
 
   // Re-assert ?profile= after navigations that dropped it (bare nav links).
   // Runs on every pathname/profile change; no-ops when already in sync.
@@ -80,28 +73,38 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let cancelled = false;
-    const urlProfile = searchParams.get("profile");
 
-    Promise.all([api.getProfiles(), api.getActiveProfile()])
-      .then(([profilesRes, info]) => {
-        if (cancelled) return;
+    Promise.all([
+      api.getProfiles().catch(() => null),
+      api.getActiveProfile().catch(() => null),
+      api.getAuthMe().catch(() => null),
+    ]).then(([profilesRes, info, me]) => {
+      if (cancelled) return;
 
+      if (profilesRes) {
         setProfiles(profilesRes.profiles.map((p) => p.name));
+      }
 
+      const bound = (me?.profile || "").trim();
+      if (bound) {
+        setProfileLocked(true);
+        setManagementProfile(bound);
+        setProfileState(bound);
+        setCurrentProfile(bound);
+        return;
+      }
+
+      if (info) {
         const current = info.current || "default";
         const active = info.active || "default";
         setCurrentProfile(current);
-
-        // Deep links (?profile=) win. Otherwise align the switcher with the
-        // sticky active profile so Chat and management pages match what the
-        // Profiles page shows as "active" (machine dashboard runs as
-        // `current`, usually default).
-        if (urlProfile === null && active !== current) {
+        const urlP = searchParams.get("profile");
+        if (urlP === null && active !== current) {
           setManagementProfile(active);
           setProfileState(active);
         }
-      })
-      .catch(() => {});
+      }
+    });
 
     return () => {
       cancelled = true;
@@ -111,6 +114,7 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
 
   const setProfile = useCallback(
     (name: string) => {
+      if (profileLocked) return;
       setManagementProfile(name);
       setProfileState(name);
       setSearchParams(
@@ -123,12 +127,12 @@ export function ProfileProvider({ children }: { children: ReactNode }) {
         { replace: true },
       );
     },
-    [setSearchParams],
+    [setSearchParams, profileLocked],
   );
 
   const value = useMemo(
-    () => ({ profile, currentProfile, profiles, setProfile }),
-    [profile, currentProfile, profiles, setProfile],
+    () => ({ profile, currentProfile, profiles, setProfile, profileLocked }),
+    [profile, currentProfile, profiles, setProfile, profileLocked],
   );
 
   return (

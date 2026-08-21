@@ -165,8 +165,45 @@ class TestRegister:
         ctx = MagicMock()
         basic.register(ctx)
         ctx.register_dashboard_auth_provider.assert_not_called()
-        assert "username" in basic.LAST_SKIP_REASON
+        assert "no users" in basic.LAST_SKIP_REASON.lower() or "users" in basic.LAST_SKIP_REASON
 
+    def test_multi_user_profile_binding(self, basic):
+        users = [
+            {
+                "username": "jimmy1",
+                "password_hash": basic.hash_password("pw1"),
+                "profile": "jimmy1",
+            },
+            {
+                "username": "jimmy2",
+                "password_hash": basic.hash_password("pw2"),
+                "profile": "jimmy2",
+            },
+        ]
+        p = basic.BasicAuthProvider(
+            users=users, secret=secrets.token_bytes(32)
+        )
+        s1 = p.complete_password_login(username="jimmy1", password="pw1")
+        s2 = p.complete_password_login(username="jimmy2", password="pw2")
+        assert s1.profile == "jimmy1"
+        assert s2.profile == "jimmy2"
+        assert s1.user_id == "jimmy1"
+        verified = p.verify_session(access_token=s1.access_token)
+        assert verified is not None
+        assert verified.profile == "jimmy1"
+        with pytest.raises(InvalidCredentialsError):
+            p.complete_password_login(username="jimmy1", password="pw2")
+
+    def test_registers_jimmy_env_users(self, basic, monkeypatch):
+        monkeypatch.setattr(basic, "_load_config_basic_auth_section", lambda: {})
+        for i in range(1, 5):
+            monkeypatch.setenv(f"JIMMY{i}_PASSWORD", f"secret{i}")
+        ctx = MagicMock()
+        basic.register(ctx)
+        provider = ctx.register_dashboard_auth_provider.call_args.args[0]
+        assert len(provider._users) == 4
+        s = provider.complete_password_login(username="jimmy3", password="secret3")
+        assert s.profile == "jimmy3"
 
     def test_registers_with_env_plaintext_password(self, basic, monkeypatch):
         monkeypatch.setenv("HERMES_DASHBOARD_BASIC_AUTH_USERNAME", "admin")

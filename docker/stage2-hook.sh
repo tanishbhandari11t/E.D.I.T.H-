@@ -431,6 +431,15 @@ seed_one ".env" ".env.example"
 seed_one "config.yaml" "cli-config.yaml.example"
 seed_one "SOUL.md" "docker/SOUL.md"
 
+# --- Jimmy multi-user profiles (optional) ---
+# When JIMMY_SEED_PROFILES=1 (or any JIMMY*_PASSWORD is set), seed isolated
+# profiles jimmy1..jimmy4 sharing Azure OpenAI process env. Safe to re-run.
+if [ "${JIMMY_SEED_PROFILES:-}" = "1" ] || [ -n "${JIMMY1_PASSWORD:-}" ]; then
+    echo "[stage2] Seeding Jimmy multi-user profiles (jimmy1..jimmy4)"
+    as_hermes python -m hermes_cli.jimmy_seed_profiles || \
+        echo "[stage2] Warning: jimmy_seed_profiles failed — continuing"
+fi
+
 # --- Ensure a gateway api_server key exists (loopback control plane) ---
 # The gateway's aiohttp api_server refuses to start without a strong
 # API_SERVER_KEY (>=16 chars; startup guard in gateway/platforms/api_server.py).

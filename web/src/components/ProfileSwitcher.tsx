@@ -16,7 +16,8 @@ import { cn } from "@/lib/utils";
  * fetchJSON ?profile= injection. Hidden when only one profile exists.
  */
 export function ProfileSwitcher({ collapsed }: ProfileSwitcherProps) {
-  const { profile, currentProfile, profiles, setProfile } = useProfileScope();
+  const { profile, currentProfile, profiles, setProfile, profileLocked } =
+    useProfileScope();
   const { t } = useI18n();
 
   const currentDashboardLabel = useMemo(
@@ -27,6 +28,30 @@ export function ProfileSwitcher({ collapsed }: ProfileSwitcherProps) {
       ),
     [currentProfile, t.app.currentProfileOption],
   );
+
+  // Jimmy multi-user: auth-bound profile — never offer a switcher.
+  if (profileLocked) {
+    if (!profile) return null;
+    return (
+      <div
+        className={cn(
+          "flex items-center gap-2 border-b border-current/10 px-3 py-2",
+          collapsed && "lg:justify-center lg:px-0",
+        )}
+        title={profile}
+      >
+        <Users className="h-3.5 w-3.5 shrink-0 text-text-tertiary" />
+        <span
+          className={cn(
+            "min-w-0 flex-1 truncate text-xs text-text-secondary",
+            collapsed && "lg:hidden",
+          )}
+        >
+          {profile}
+        </span>
+      </div>
+    );
+  }
 
   if (profiles.length < 2) return null;
 

@@ -1,0 +1,53 @@
+# Slim Jimmy image for Azure Container Apps (dashboard + agent only).
+# Avoids full Hermes Dockerfile (s6/sqlite/playwright) for fast ACR builds.
+FROM node:22-bookworm-slim AS web
+WORKDIR /src
+COPY web/package.json web/package-lock.json ./web/
+RUN cd web && npm ci --omit=dev
+COPY web ./web
+# Vite outputs to hermes_cli/web_dist (see web vite config)
+COPY hermes_cli ./hermes_cli
+RUN cd web && npm run build
+
+FROM python:3.13-slim-bookworm
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    HERMES_HOME=/opt/data \
+    HOME=/opt/data \
+    PATH="/opt/jimmy/.venv/bin:$PATH" \
+    HERMES_DASHBOARD=1 \
+    HERMES_DASHBOARD_HOST=0.0.0.0 \
+    HERMES_DASHBOARD_PORT=9119 \
+    JIMMY_SEED_PROFILES=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates curl git ripgrep \
+    && rm -rf /var/lib/apt/lists/* \
+    && useradd -u 10000 -m -d /opt/data jimmy
+
+WORKDIR /opt/jimmy
+COPY pyproject.toml README.md LICENSE ./
+COPY hermes_cli ./hermes_cli
+COPY agent ./agent
+COPY tools ./tools
+COPY gateway ./gateway
+COPY cron ./cron
+COPY plugins ./plugins
+COPY skills ./skills
+COPY optional-skills ./optional-skills
+COPY tui_gateway ./tui_gateway
+COPY ui-tui ./ui-tui
+COPY hermes_constants.py hermes_state.py hermes_logging.py model_tools.py toolsets.py run_agent.py cli.py batch_runner.py ./
+COPY --from=web /src/hermes_cli/web_dist ./hermes_cli/web_dist
+
+RUN python -m venv /opt/jimmy/.venv \
+    && /opt/jimmy/.venv/bin/pip install -U pip setuptools wheel \
+    && /opt/jimmy/.venv/bin/pip install -e . \
+    && chown -R jimmy:jimmy /opt/jimmy /opt/data
+
+USER jimmy
+WORKDIR /opt/data
+EXPOSE 9119
+
+# Seed profiles then serve dashboard publicly (auth gate auto-on for 0.0.0.0).
+CMD ["sh", "-c", "python -m hermes_cli.jimmy_seed_profiles || true; exec hermes dashboard --host 0.0.0.0 --port 9119 --no-open"]

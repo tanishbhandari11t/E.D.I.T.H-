@@ -1,0 +1,17 @@
+.git
+.venv
+venv
+node_modules
+**/node_modules
+apps
+website
+tests
+docs
+*.md
+!README.md
+.azure
+ui-tui/node_modules
+web/node_modules
+**/__pycache__
+**/.pytest_cache
+hermes_cli/web_dist
