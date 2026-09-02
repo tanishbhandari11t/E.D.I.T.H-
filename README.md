@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="EDITH" width="100%">
+  <img src="assets/banner.png" alt="E.D.I.T.H." width="100%">
 </p>
 
 # E.D.I.T.H.
