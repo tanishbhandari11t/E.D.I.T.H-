@@ -25,7 +25,7 @@ def test_openrouter_base_url_applies_or_headers(mock_openai):
 
     headers = agent._client_kwargs["default_headers"]
     assert headers["HTTP-Referer"] == "https://hermes-agent.nousresearch.com"
-    assert headers["X-Title"] == "Hermes Agent"
+    assert headers["X-Title"] == "EDITH"
 
 
 @patch("run_agent.OpenAI")
@@ -44,7 +44,7 @@ def test_ai_gateway_base_url_applies_attribution_headers(mock_openai):
 
     headers = agent._client_kwargs["default_headers"]
     assert headers["HTTP-Referer"] == "https://hermes-agent.nousresearch.com"
-    assert headers["X-Title"] == "Hermes Agent"
+    assert headers["X-Title"] == "EDITH"
     assert headers["User-Agent"].startswith("HermesAgent/")
 
 
@@ -107,7 +107,7 @@ def test_fireworks_applies_attribution_via_profile_fallback(mock_openai):
 
     headers = agent._client_kwargs["default_headers"]
     assert headers["HTTP-Referer"] == "https://hermes-agent.nousresearch.com"
-    assert headers["X-Title"] == "Hermes Agent"
+    assert headers["X-Title"] == "EDITH"
     assert headers["User-Agent"].startswith("HermesAgent/")
 
 
@@ -131,7 +131,7 @@ def test_opencode_go_applies_attribution_via_profile_fallback(mock_openai):
 
     headers = agent._client_kwargs["default_headers"]
     assert headers["HTTP-Referer"] == "https://hermes-agent.nousresearch.com"
-    assert headers["X-Title"] == "Hermes Agent"
+    assert headers["X-Title"] == "EDITH"
     assert headers["User-Agent"].startswith("HermesAgent/")
 
 
@@ -152,7 +152,7 @@ def test_opencode_zen_applies_attribution_via_profile_fallback(mock_openai):
 
     headers = agent._client_kwargs["default_headers"]
     assert headers["HTTP-Referer"] == "https://hermes-agent.nousresearch.com"
-    assert headers["X-Title"] == "Hermes Agent"
+    assert headers["X-Title"] == "EDITH"
     assert headers["User-Agent"].startswith("HermesAgent/")
 
 

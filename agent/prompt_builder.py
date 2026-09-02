@@ -148,7 +148,7 @@ def _strip_yaml_frontmatter(content: str) -> str:
 # =========================================================================
 
 DEFAULT_AGENT_IDENTITY = (
-    "You are Jimmy, an intelligent AI assistant. "
+    "You are EDITH, an intelligent AI assistant. "
     "You are helpful, knowledgeable, and direct. You assist users with a wide "
     "range of tasks including answering questions, writing and editing code, "
     "analyzing information, creative work, and executing actions via your tools. "
@@ -158,8 +158,8 @@ DEFAULT_AGENT_IDENTITY = (
 )
 
 HERMES_AGENT_HELP_GUIDANCE = (
-    "You run on Jimmy. When the user needs help with "
-    "Jimmy itself — configuring, setting up, using, extending, or troubleshooting "
+    "You run on EDITH. When the user needs help with "
+    "EDITH itself — configuring, setting up, using, extending, or troubleshooting "
     "it — or when you need to understand your own features, tools, or capabilities, "
     "use your available tools and local config/docs in this installation. "
     "Prefer the project's AGENTS.md and local skills over external product docs."
@@ -2176,7 +2176,7 @@ def _build_skills_system_prompt_inner(
             "for tasks like code review, planning, and testing — load them even for tasks you "
             "already know how to do, because the skill defines how it should be done here.\n"
             "Whenever the user asks you to configure, set up, install, enable, disable, modify, "
-            "or troubleshoot Jimmy itself — its CLI, config, models, providers, tools, "
+            "or troubleshoot EDITH itself — its CLI, config, models, providers, tools, "
             "skills, voice, gateway, plugins, or any feature — load the `hermes-agent` skill "
             "first. It has the actual commands (e.g. `hermes config set …`, `hermes tools`, "
             "`hermes setup`) so you don't have to guess or invent workarounds.\n"

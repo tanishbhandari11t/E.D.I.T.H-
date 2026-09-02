@@ -1581,7 +1581,7 @@ DEFAULT_CONFIG = {
             "profile": "",  # optional single-user profile bind
             "secret": "",  # token-signing key; blank → random per-process
             "session_ttl_seconds": 0,  # 0 → plugin default (12h)
-            # Multi-user (Jimmy Azure): list of {username, password|password_hash, profile}.
+            # Multi-user (EDITH Azure): list of {username, password|password_hash, profile}.
             # When non-empty, overrides the single username/password fields.
             "users": [],
         },
@@ -2279,7 +2279,7 @@ DEFAULT_CONFIG = {
     # WhatsApp platform settings (gateway mode)
     "whatsapp": {
         # Reply prefix prepended to every outgoing WhatsApp message.
-        # Default (None) uses the built-in "⚕ *Jimmy*" header.
+        # Default (None) uses the built-in "⚕ *EDITH*" header.
         # Set to "" (empty string) to disable the header entirely.
         # Supports \n for newlines, e.g. "🤖 *My Bot*\n──────\n"
     },

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Seed four isolated Jimmy profiles sharing Azure OpenAI credentials.
+"""Seed four isolated EDITH profiles sharing Azure OpenAI credentials.
 
 Run inside the container (or with HERMES_HOME set) on first boot:
 
@@ -135,7 +135,7 @@ def _ensure_profile(profiles_root: Path, name: str, model: dict[str, Any]) -> Pa
     soul = home / "SOUL.md"
     if not soul.exists():
         soul.write_text(
-            "You are Jimmy, an intelligent AI assistant. "
+            "You are EDITH, an intelligent AI assistant. "
             "You are helpful, knowledgeable, and direct.\n",
             encoding="utf-8",
         )

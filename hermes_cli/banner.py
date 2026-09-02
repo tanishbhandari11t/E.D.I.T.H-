@@ -67,12 +67,12 @@ def _skin_color(key: str, fallback: str) -> str:
 
 from hermes_cli import __version__ as VERSION, __release_date__ as RELEASE_DATE
 
-HERMES_AGENT_LOGO = """[bold #FFD700]     ██╗██╗███╗   ███╗███╗   ███╗██╗   ██╗[/]
-[bold #FFD700]     ██║██║████╗ ████║████╗ ████║╚██╗ ██╔╝[/]
-[#FFBF00]     ██║██║██╔████╔██║██╔████╔██║ ╚████╔╝ [/]
-[#FFBF00]██   ██║██║██║╚██╔╝██║██║╚██╔╝██║  ╚██╔╝  [/]
-[#CD7F32]╚█████╔╝██║██║ ╚═╝ ██║██║ ╚═╝ ██║   ██║   [/]
-[#CD7F32] ╚════╝ ╚═╝╚═╝     ╚═╝╚═╝     ╚═╝   ╚═╝   [/]"""
+HERMES_AGENT_LOGO = """[bold #FFD700]███████╗██████╗ ██╗████████╗██╗  ██╗[/]
+[bold #FFD700]██╔════╝██╔══██╗██║╚══██╔══╝██║  ██║[/]
+[#FFBF00]█████╗  ██║  ██║██║   ██║   ███████║[/]
+[#FFBF00]██╔══╝  ██║  ██║██║   ██║   ██╔══██║[/]
+[#CD7F32]███████╗██████╔╝██║   ██║   ██║  ██║[/]
+[#CD7F32]╚══════╝╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝[/]"""
 
 HERMES_CADUCEUS = """[#CD7F32]⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⣀⣀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀[/]
 [#CD7F32]⠀⠀⠀⠀⠀⠀⢀⣠⣴⣾⣿⣿⣇⠸⣿⣿⠇⣸⣿⣿⣷⣦⣄⡀⠀⠀⠀⠀⠀⠀[/]
@@ -620,7 +620,7 @@ def get_latest_release_tag(repo_dir: Optional[Path] = None) -> Optional[tuple]:
 
 def format_banner_version_label() -> str:
     """Return the version label shown in the startup banner title."""
-    base = f"Jimmy v{VERSION} ({RELEASE_DATE})"
+    base = f"EDITH v{VERSION} ({RELEASE_DATE})"
     state = get_git_banner_state()
     if not state:
         return base
@@ -1011,7 +1011,7 @@ def build_welcome_banner(console: "Console", model: str, cwd: str,
             preset_name = preset_name[:25] + "..."
         agg_str = f" [dim {dim}]·[/] [dim {dim}]agg {agg_label}[/]" if agg_label else ""
         ctx_str = f" [dim {dim}]·[/] [dim {dim}]{_format_context_length(context_length)} context[/]" if context_length else ""
-        left_lines.append(f"[{accent}]MoA: {preset_name}[/]{agg_str}{ctx_str} [dim {dim}]·[/] [dim {dim}]Jimmy[/]")
+        left_lines.append(f"[{accent}]MoA: {preset_name}[/]{agg_str}{ctx_str} [dim {dim}]·[/] [dim {dim}]EDITH[/]")
     else:
         if not (model or "").strip() or (model or "").strip().lower() == "unknown":
             # Unconfigured install: say so in red instead of a blank/"unknown"
@@ -1028,7 +1028,7 @@ def build_welcome_banner(console: "Console", model: str, cwd: str,
             if len(model_short) > 28:
                 model_short = model_short[:25] + "..."
             ctx_str = f" [dim {dim}]·[/] [dim {dim}]{_format_context_length(context_length)} context[/]" if context_length else ""
-            left_lines.append(f"[{accent}]{model_short}[/]{ctx_str} [dim {dim}]·[/] [dim {dim}]Jimmy[/]")
+            left_lines.append(f"[{accent}]{model_short}[/]{ctx_str} [dim {dim}]·[/] [dim {dim}]EDITH[/]")
 
     if os.getenv("HERMES_YOLO_MODE"):
         left_lines.append(f"[bold red]⚠ YOLO mode[/] [dim {dim}]— all approval prompts bypassed[/]")

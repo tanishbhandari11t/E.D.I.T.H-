@@ -29,7 +29,7 @@ export function ProfileSwitcher({ collapsed }: ProfileSwitcherProps) {
     [currentProfile, t.app.currentProfileOption],
   );
 
-  // Jimmy multi-user: auth-bound profile — never offer a switcher.
+  // EDITH multi-user: auth-bound profile — never offer a switcher.
   if (profileLocked) {
     if (!profile) return null;
     return (

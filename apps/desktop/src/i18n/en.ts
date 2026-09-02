@@ -65,19 +65,19 @@ export const en: Translations = {
   },
 
   boot: {
-    ready: 'Jimmy Desktop is ready',
+    ready: 'EDITH Desktop is ready',
     desktopBootFailedWithMessage: message => `Desktop boot failed: ${message}`,
     steps: {
       connectingGateway: 'Connecting live desktop gateway',
-      loadingSettings: 'Loading Jimmy settings',
+      loadingSettings: 'Loading EDITH settings',
       loadingSessions: 'Loading recent sessions',
-      retryingRemoteBackend: 'Reconnecting to the remote Jimmy backend…',
+      retryingRemoteBackend: 'Reconnecting to the remote EDITH backend…',
       startingDesktopConnection: 'Starting desktop connection',
-      startingHermesDesktop: 'Starting Jimmy Desktop…'
+      startingHermesDesktop: 'Starting EDITH Desktop…'
     },
     errors: {
-      backgroundExited: 'Jimmy background process exited.',
-      backgroundExitedDuringStartup: 'Jimmy background process exited during startup.',
+      backgroundExited: 'EDITH background process exited.',
+      backgroundExitedDuringStartup: 'EDITH background process exited during startup.',
       backendStopped: 'Backend stopped',
       desktopBootFailed: 'Desktop boot failed',
       gatewayConnectionLost: 'Lost connection to the gateway',
@@ -85,7 +85,7 @@ export const en: Translations = {
       ipcBridgeUnavailable: 'Desktop IPC bridge is unavailable.'
     },
     failure: {
-      title: "Jimmy couldn't start",
+      title: "EDITH couldn't start",
       description:
         "The background gateway didn't come up. Try one of the recovery steps below. Nothing here deletes your chats or settings.",
       remoteTitle: 'Remote gateway sign-in required',
@@ -127,9 +127,9 @@ export const en: Translations = {
     copyDetailFailed: 'Could not copy notification detail',
     backendOutOfDateTitle: 'Backend out of date',
     backendOutOfDateMessage:
-      'Your Jimmy backend is older than this desktop build and may not work correctly. Update to align them.',
+      'Your EDITH backend is older than this desktop build and may not work correctly. Update to align them.',
     installMethodUnsupportedTitle: 'Unsupported install method',
-    updateHermes: 'Update Jimmy',
+    updateHermes: 'Update EDITH',
     updateReadyTitle: 'Update ready',
     updateReadyMessage: count => `${count} new change${count === 1 ? '' : 's'} available.`,
     updateReadyMessageUnknown: 'A new update is available.',
@@ -148,7 +148,7 @@ export const en: Translations = {
       diskFull: 'Disk full — free some space, then try again.',
       gatewayAuthFailed: 'Gateway authentication failed — check your API_SERVER_KEY.',
       methodNotAllowed:
-        'The desktop backend rejected that request (405 Method Not Allowed). Try restarting Jimmy Desktop.',
+        'The desktop backend rejected that request (405 Method Not Allowed). Try restarting EDITH Desktop.',
       microphonePermission: 'Microphone permission was denied.',
       openaiRejectedApiKey: 'OpenAI rejected the API key.',
       openaiRejectedApiKeyWithStatus: status => `OpenAI rejected the API key (${status} invalid_api_key).`,
@@ -179,8 +179,8 @@ export const en: Translations = {
       approveAction: 'Approve',
       rejectAction: 'Reject',
       inputTitle: 'Input needed',
-      inputBody: 'Jimmy is waiting for your response.',
-      turnDoneTitle: 'Jimmy finished',
+      inputBody: 'EDITH is waiting for your response.',
+      turnDoneTitle: 'EDITH finished',
       turnDoneBody: '',
       turnErrorTitle: 'Turn failed',
       backgroundDoneTitle: 'Background task finished',
@@ -351,7 +351,7 @@ export const en: Translations = {
     exportConfig: 'Export config',
     importConfig: 'Import config',
     resetToDefaults: 'Reset to defaults',
-    resetConfirm: 'Reset all settings to Jimmy defaults?',
+    resetConfirm: 'Reset all settings to EDITH defaults?',
     exportFailed: 'Export failed',
     resetFailed: 'Reset failed',
     nav: {
@@ -386,7 +386,7 @@ export const en: Translations = {
       agent: {
         title: 'Agent plugins',
         blurb:
-          'Plugins you installed into the Jimmy backend — tools, skills, MCP servers, hooks, and slash commands. Portable ones are Agent Plugins packages (skills + MCP bundles that work in other agents too). Toggles apply to new sessions.',
+          'Plugins you installed into the EDITH backend — tools, skills, MCP servers, hooks, and slash commands. Portable ones are Agent Plugins packages (skills + MCP bundles that work in other agents too). Toggles apply to new sessions.',
         appliesTo: 'Applies to:',
         empty: 'No agent plugins installed yet.',
         loadFailed: 'Could not load agent plugins',
@@ -394,7 +394,7 @@ export const en: Translations = {
         search: 'Search plugins…',
         noMatches: 'No plugins match your search.',
         toggleFailed: (name: string) => `Could not toggle ${name}`,
-        updateBackendToManage: 'Update the Jimmy backend to manage this plugin from Desktop.',
+        updateBackendToManage: 'Update the EDITH backend to manage this plugin from Desktop.',
         sources: { bundled: 'bundled', user: 'user', git: 'git', project: 'project', entrypoint: 'pip' }
       },
       installModal: {
@@ -436,7 +436,7 @@ export const en: Translations = {
       intro: 'OS notifications (not in-app toasts). Per device.',
       enableAll: 'Enable notifications',
       enableAllDesc: 'Off silences every notification below.',
-      focusedHint: 'Completion alerts only fire while Jimmy is in the background.',
+      focusedHint: 'Completion alerts only fire while EDITH is in the background.',
       kinds: {
         approval: {
           label: 'Approval needed',
@@ -444,11 +444,11 @@ export const en: Translations = {
         },
         input: {
           label: 'Input needed',
-          description: 'Jimmy asked a question or needs a password or secret.'
+          description: 'EDITH asked a question or needs a password or secret.'
         },
         turnDone: {
           label: 'Response ready',
-          description: 'A turn finished while Jimmy was in the background.'
+          description: 'A turn finished while EDITH was in the background.'
         },
         turnError: {
           label: 'Turn failed',
@@ -464,11 +464,11 @@ export const en: Translations = {
         },
         plugin: {
           label: 'Plugin notifications',
-          description: 'A desktop plugin sent a notification while Jimmy was in the background.'
+          description: 'A desktop plugin sent a notification while EDITH was in the background.'
         }
       },
       test: 'Send test notification',
-      testTitle: 'Jimmy',
+      testTitle: 'EDITH',
       testBody: 'Notifications are working.',
       testSent: 'Test sent. If nothing appears, check your OS notification permissions and Focus/Do Not Disturb.',
       testUnsupported: 'This system does not support native notifications.',
@@ -487,7 +487,7 @@ export const en: Translations = {
       advanced: 'Advanced'
     },
     searchPlaceholder: {
-      about: 'About Jimmy Desktop',
+      about: 'About EDITH Desktop',
       config: 'Search settings...',
       gateway: 'Gateway connection...',
       keys: 'Search API keys...',
@@ -503,7 +503,7 @@ export const en: Translations = {
       title: 'Appearance',
       intro: 'Desktop-only. Mode is brightness; theme is palette and chat chrome.',
       colorMode: 'Color Mode',
-      colorModeDesc: 'Pick a fixed mode or let Jimmy follow your system setting.',
+      colorModeDesc: 'Pick a fixed mode or let EDITH follow your system setting.',
       toolViewTitle: 'Tool Call Display',
       toolViewDesc: 'Product hides raw tool payloads; Technical shows full input/output.',
       reasoningCollapsedTitle: 'Collapse thinking by default',
@@ -547,7 +547,7 @@ export const en: Translations = {
       introSplashTitle: 'Intro Splash',
       introSplashDesc: 'The wordmark and prompt shown on an empty chat.',
       reactionsTitle: 'Message Reactions',
-      reactionsDesc: 'iMessage-style emoji tapbacks — react to messages, and Jimmy can react to yours.',
+      reactionsDesc: 'iMessage-style emoji tapbacks — react to messages, and EDITH can react to yours.',
       composerPopoutTitle: 'Floating Composer',
       composerPopoutDesc: 'Allow dragging the composer out of its dock. Turn this off to keep it locked at the bottom.',
       embedsTitle: 'Inline Embeds',
@@ -577,9 +577,9 @@ export const en: Translations = {
       pet: {
         title: 'Pet',
         intro:
-          'Adopt an animated petdex mascot that floats over the app and reacts to what Jimmy is doing — running while tools execute, celebrating on success, sulking on errors.',
+          'Adopt an animated petdex mascot that floats over the app and reacts to what EDITH is doing — running while tools execute, celebrating on success, sulking on errors.',
         restartHint:
-          'Pets need a quick restart — the running app started before this feature was added. Quit and reopen Jimmy, then come back here.',
+          'Pets need a quick restart — the running app started before this feature was added. Quit and reopen EDITH, then come back here.',
         on: 'On',
         off: 'Off',
         scaleTitle: 'Size',
@@ -617,12 +617,12 @@ export const en: Translations = {
     fieldLabels: FIELD_LABELS,
     fieldDescriptions: FIELD_DESCRIPTIONS,
     about: {
-      heading: 'Jimmy Desktop',
+      heading: 'EDITH Desktop',
       version: value => `Version ${value}`,
       versionUnavailable: 'Version unavailable',
       bundleOutOfSync: 'App build out of date',
       bundleOutOfSyncDesc:
-        'The Jimmy runtime was updated, but the desktop app itself is still an older build — new interface features (like Bot Mode) will be missing until it updates. Run the update below to rebuild the app. If that doesn\u2019t clear this warning, reinstall from the latest desktop installer.',
+        'The EDITH runtime was updated, but the desktop app itself is still an older build — new interface features (like Bot Mode) will be missing until it updates. Run the update below to rebuild the app. If that doesn\u2019t clear this warning, reinstall from the latest desktop installer.',
       bundleOutOfSyncAction: 'Get the installer',
       updates: 'Updates',
       checkNow: 'Check now',
@@ -641,7 +641,7 @@ export const en: Translations = {
       justNowSuffix: ' · just now',
       automaticUpdates: 'Automatic updates',
       automaticUpdatesDesc:
-        'Jimmy checks for updates automatically in the background and lets you know when one is ready.',
+        'EDITH checks for updates automatically in the background and lets you know when one is ready.',
       branchCommit: (branch, commit) => `Branch ${branch} · Commit ${commit}`,
       never: 'never',
       justNow: 'just now',
@@ -658,7 +658,7 @@ export const en: Translations = {
       searchPlaceholder: 'Search…',
       noResults: 'No results found',
       systemDefault: 'System default',
-      loading: 'Loading Jimmy configuration...',
+      loading: 'Loading EDITH configuration...',
       emptyTitle: 'Nothing to configure',
       emptyDesc: 'This section has no adjustable settings.',
       failedLoad: 'Settings failed to load',
@@ -680,7 +680,7 @@ export const en: Translations = {
     quickEntry: {
       enabledTitle: 'Quick Entry',
       enabledDesc:
-        'Summon a small composer from anywhere with a global shortcut and fire a prompt without opening Jimmy.',
+        'Summon a small composer from anywhere with a global shortcut and fire a prompt without opening EDITH.',
       shortcutTitle: 'Quick Entry shortcut',
       shortcutDesc: 'Needs at least one modifier, e.g. CommandOrControl+Shift+Space.',
       active: 'Shortcut is active.',
@@ -710,7 +710,7 @@ export const en: Translations = {
     // v2 multi-connection registry: Settings → Gateways.
     connections: {
       title: 'Registered gateways',
-      intro: 'Manage this device and every Jimmy gateway it can reach through remote, SSH, or Cloud connections.',
+      intro: 'Manage this device and every EDITH gateway it can reach through remote, SSH, or Cloud connections.',
       stagedNote:
         'Switch gateways from Sessions. Profiles, chats, messaging, and cron jobs stay with their gateway; work on other gateways keeps running.',
       launchModeTitle: 'At startup, return to Sessions on the last-used gateway',
@@ -737,15 +737,15 @@ export const en: Translations = {
       updateAllRunning: 'Updating all instances…',
       updateAllDone: 'Updates dispatched',
       updateAllFailed: 'Update fan-out failed',
-      updateSkippedCloud: 'Managed by Jimmy Cloud',
+      updateSkippedCloud: 'Managed by EDITH Cloud',
       kindLocal: 'Local',
       kindRemote: 'Remote gateway',
-      kindCloud: 'Jimmy Cloud',
+      kindCloud: 'EDITH Cloud',
       kindSsh: 'SSH',
-      kindLocalDesc: 'The Jimmy runtime managed by this app.',
-      kindRemoteDesc: 'A Jimmy gateway reachable over HTTP(S) — LAN, Tailscale, or the internet.',
-      kindCloudDesc: 'A hosted instance discovered through your Jimmy Cloud account.',
-      kindSshDesc: 'A Jimmy install reached over SSH.',
+      kindLocalDesc: 'The EDITH runtime managed by this app.',
+      kindRemoteDesc: 'A EDITH gateway reachable over HTTP(S) — LAN, Tailscale, or the internet.',
+      kindCloudDesc: 'A hosted instance discovered through your EDITH Cloud account.',
+      kindSshDesc: 'A EDITH install reached over SSH.',
       labelTitle: 'Name',
       labelDesc: 'Required. Shown everywhere this instance appears; must be unique (e.g. “Homelab”, “Work laptop”).',
       labelPlaceholder: 'Homelab',
@@ -753,7 +753,7 @@ export const en: Translations = {
       sshHostTitle: 'SSH host',
       headersTitle: 'Extra gateway headers',
       headersDesc:
-        'Sent with every HTTP and WebSocket request to this gateway — for access proxies such as Cloudflare Access (CF-Access-Client-Id / CF-Access-Client-Secret). Values are stored encrypted. Headers Jimmy manages (Authorization, Cookie, Host…) are ignored.',
+        'Sent with every HTTP and WebSocket request to this gateway — for access proxies such as Cloudflare Access (CF-Access-Client-Id / CF-Access-Client-Secret). Values are stored encrypted. Headers EDITH manages (Authorization, Cookie, Host…) are ignored.',
       headerValuePlaceholder: 'Value',
       headerValueSaved: 'Saved — leave blank to keep',
       headerAdd: 'Add header',
@@ -764,7 +764,7 @@ export const en: Translations = {
       sameBackendHint: (label: string) => `Same backend as “${label}”`,
       localAddHint: 'Local is unavailable: the managed local connection already exists (there is only ever one).',
       cloudAddHint:
-        'Tip: signing in under Jimmy Cloud above discovers your agents automatically — use this form only to register a known instance URL by hand.',
+        'Tip: signing in under EDITH Cloud above discovers your agents automatically — use this form only to register a known instance URL by hand.',
       save: 'Save connection',
       saving: 'Saving…',
       cancel: 'Cancel',
@@ -777,22 +777,22 @@ export const en: Translations = {
       title: 'Gateway Connection',
       envOverride: 'env override',
       intro:
-        'Local by default. Use remote when this app should drive a Jimmy backend elsewhere. Gateway connections are machine-level; profiles are discovered from the gateways you connect.',
+        'Local by default. Use remote when this app should drive a EDITH backend elsewhere. Gateway connections are machine-level; profiles are discovered from the gateways you connect.',
       envOverrideTitle: 'Environment variables are controlling this desktop session.',
       envOverrideDesc:
         'Unset HERMES_DESKTOP_REMOTE_URL and HERMES_DESKTOP_REMOTE_TOKEN to use the saved setting below.',
       modeTitle: 'Connection mode',
       localTitle: 'Local gateway',
-      localDesc: 'Start a private Jimmy backend on localhost. This is the default and works offline.',
+      localDesc: 'Start a private EDITH backend on localhost. This is the default and works offline.',
       remoteTitle: 'Remote gateway',
-      remoteDesc: 'Connect this desktop shell to a remote Jimmy backend.',
+      remoteDesc: 'Connect this desktop shell to a remote EDITH backend.',
       remoteAuthHint: 'Hosted gateways use OAuth or a username and password; self-hosted ones may use a session token.',
-      cloudTitle: 'Jimmy Cloud',
-      cloudDesc: 'Sign in once to Jimmy Cloud and pick from the agents on your account — no URL to paste.',
-      cloudSignInTitle: 'Jimmy Cloud',
-      cloudSignIn: 'Sign in to Jimmy Cloud',
-      cloudSignedIn: 'Signed in to Jimmy Cloud',
-      cloudNeedsSignIn: 'Sign in to Jimmy Cloud to discover the agents on your account.',
+      cloudTitle: 'EDITH Cloud',
+      cloudDesc: 'Sign in once to EDITH Cloud and pick from the agents on your account — no URL to paste.',
+      cloudSignInTitle: 'EDITH Cloud',
+      cloudSignIn: 'Sign in to EDITH Cloud',
+      cloudSignedIn: 'Signed in to EDITH Cloud',
+      cloudNeedsSignIn: 'Sign in to EDITH Cloud to discover the agents on your account.',
       cloudSignedInDesc: 'You are signed in. Pick an agent below; the session refreshes automatically.',
       cloudAgentsTitle: 'Your agents',
       cloudOrgPickerTitle: 'Choose an organization',
@@ -808,11 +808,11 @@ export const en: Translations = {
       cloudRefresh: 'Refresh',
       cloudConnect: 'Connect',
       cloudConnecting: 'Connecting…',
-      cloudDiscoverFailed: 'Could not load your Jimmy Cloud agents',
+      cloudDiscoverFailed: 'Could not load your EDITH Cloud agents',
       cloudConnectFailed: 'Could not connect to that agent',
-      cloudSignInFailed: 'Jimmy Cloud sign-in failed',
-      cloudSignedOutTitle: 'Signed out of Jimmy Cloud',
-      cloudSignedOutMessage: 'Cleared the Jimmy Cloud session.',
+      cloudSignInFailed: 'EDITH Cloud sign-in failed',
+      cloudSignedOutTitle: 'Signed out of EDITH Cloud',
+      cloudSignedOutMessage: 'Cleared the EDITH Cloud session.',
       cloudConnectedTitle: 'Connected',
       cloudConnectedPill: 'Connected',
       cloudConnectedTo: name => `Connected to ${name}.`,
@@ -858,9 +858,9 @@ export const en: Translations = {
       enterUrlFirst: 'Enter a remote URL first.',
       restartingTitle: 'Gateway connection restarting',
       savedTitle: 'Gateway settings saved',
-      restartingMessage: 'Jimmy Desktop will reconnect using the saved settings — the shell stays open.',
+      restartingMessage: 'EDITH Desktop will reconnect using the saved settings — the shell stays open.',
       savedMessage: 'Saved for the next restart.',
-      connectedTo: (baseUrl, version) => `Connected to ${baseUrl}${version ? ` · Jimmy ${version}` : ''}`,
+      connectedTo: (baseUrl, version) => `Connected to ${baseUrl}${version ? ` · EDITH ${version}` : ''}`,
       reachableTitle: 'Remote gateway reachable',
       signedOutTitle: 'Signed out',
       signedOutMessage: 'Cleared the remote gateway session.',
@@ -872,7 +872,7 @@ export const en: Translations = {
       saveFailed: 'Could not save gateway settings',
       sshTitle: 'Connect via SSH',
       sshDesc:
-        'Jimmy is launched on the remote over SSH and tunneled to this app — nothing to start or expose yourself. Requires working key-based SSH access to the host.',
+        'EDITH is launched on the remote over SSH and tunneled to this app — nothing to start or expose yourself. Requires working key-based SSH access to the host.',
       sshTrustHint: 'The first presented host key is trusted and pinned; later changes fail closed.',
       sshHostTitle: 'Host',
       sshHostDesc: 'user@host, or a Host alias from ~/.ssh/config.',
@@ -887,25 +887,25 @@ export const en: Translations = {
       sshPortDesc: 'Blank = 22 or the ~/.ssh/config port.',
       sshKeyTitle: 'Identity file',
       sshKeyDesc: 'Private key path. Blank = ssh-agent or ~/.ssh/config.',
-      sshHermesPathTitle: 'Jimmy path (optional)',
+      sshHermesPathTitle: 'EDITH path (optional)',
       sshHermesPathDesc: 'Full path to the remote hermes binary. Blank = auto-detect.',
       sshHermesPathPlaceholder: 'auto-detect',
       sshTestConnection: 'Test SSH',
       sshConnect: 'Connect',
       sshButtonsHint: 'Save applies on the next launch. Connect reconnects now.',
-      sshReachable: (host, platform) => `Reachable: ${host} (${platform}) — Jimmy found`,
+      sshReachable: (host, platform) => `Reachable: ${host} (${platform}) — EDITH found`,
       sshIncompleteHost: 'Enter an SSH host before connecting.',
       sshErrUnreachable: 'Could not reach that host over SSH. Check the host, port, and your network.',
       sshErrAuth:
-        'SSH authentication failed. Load your key into the ssh-agent (ssh-add) or set an IdentityFile in ~/.ssh/config — Jimmy runs ssh non-interactively.',
+        'SSH authentication failed. Load your key into the ssh-agent (ssh-add) or set an IdentityFile in ~/.ssh/config — EDITH runs ssh non-interactively.',
       sshErrHostKey:
         'The host key has CHANGED since you last connected. Verify this is expected, then run ssh-keygen -R <host> and reconnect.',
       sshErrNotInstalled:
-        'Jimmy is not installed on the remote host. Install it there (curl -fsSL https://hermes-agent.nousresearch.com/install.sh | sh) or set the Jimmy path.',
+        'EDITH is not installed on the remote host. Install it there (curl -fsSL https://hermes-agent.nousresearch.com/install.sh | sh) or set the EDITH path.',
       sshErrPlatform:
-        'Unsupported remote platform. Jimmy Desktop SSH mode supports Linux, macOS, and Windows remote hosts.',
+        'Unsupported remote platform. EDITH Desktop SSH mode supports Linux, macOS, and Windows remote hosts.',
       sshErrTimeout: 'SSH connection timed out. The host may be unreachable or asleep.',
-      sshErrUpdateRequired: 'Update Jimmy on the remote host before connecting with Desktop SSH.',
+      sshErrUpdateRequired: 'Update EDITH on the remote host before connecting with Desktop SSH.',
       sshErrUnknown: 'SSH connection failed.'
     },
     keys: {
@@ -991,7 +991,7 @@ export const en: Translations = {
       noOutput: 'No output yet.',
       deepLinkTitle: 'Add MCP server?',
       deepLinkDescription:
-        'A link asked to add this MCP server to Jimmy. Review the exact configuration below — it comes from the link, not from Jimmy.',
+        'A link asked to add this MCP server to EDITH. Review the exact configuration below — it comes from the link, not from EDITH.',
       deepLinkStdioWarning:
         'This server runs a local process on your machine with the command shown below. Only continue if you trust its source.',
       deepLinkConfirm: 'Add server',
@@ -1044,7 +1044,7 @@ export const en: Translations = {
       connectAccount: 'Connect an account',
       haveApiKey: 'Have an API key instead?',
       intro:
-        'Sign in with a subscription — no API key to copy. Jimmy runs the browser sign-in for you, right here in the app.',
+        'Sign in with a subscription — no API key to copy. EDITH runs the browser sign-in for you, right here in the app.',
       connected: 'Connected',
       collapse: 'Collapse',
       connectAnother: 'Connect another provider',
@@ -1065,7 +1065,7 @@ export const en: Translations = {
       noKeysMatch: 'No providers match your search.',
       localEndpoint: {
         title: 'Local / custom endpoint',
-        description: 'Point Jimmy at any OpenAI-compatible endpoint (Zyphra, vLLM, llama.cpp, Ollama, etc).'
+        description: 'Point EDITH at any OpenAI-compatible endpoint (Zyphra, vLLM, llama.cpp, Ollama, etc).'
       },
       loading: 'Loading providers...'
     },
@@ -1305,7 +1305,7 @@ export const en: Translations = {
     loadFailed: 'Could not load memory graph',
     loading: 'Loading…',
     emptyTitle: 'Nothing learned yet',
-    emptyDesc: 'As Jimmy builds skills and memories for your work, they appear here.',
+    emptyDesc: 'As EDITH builds skills and memories for your work, they appear here.',
     share: 'Share map',
     shareHint:
       'Copy the code to share this map, or paste one to load. It only includes the layout, not your memory or skill text.',
@@ -1375,7 +1375,7 @@ export const en: Translations = {
       placeholder: 'Search pets…',
       loading: 'Loading petdex gallery…',
       error: 'Could not reach the petdex gallery.',
-      staleBackend: 'Restart Jimmy to use pets — the backend predates this feature.',
+      staleBackend: 'Restart EDITH to use pets — the backend predates this feature.',
       empty: 'No matching pets.',
       turnOff: 'Turn off',
       turnOn: 'Turn on',
@@ -1402,8 +1402,8 @@ export const en: Translations = {
       hatchComposing: 'Piecing it together…',
       hatchSaving: 'Almost there…',
       namePlaceholder: 'Name your pet',
-      staleBackend: 'Update Jimmy to generate pets.',
-      backgroundHint: 'You can close this — Jimmy will notify you when it’s done.',
+      staleBackend: 'Update EDITH to generate pets.',
+      backgroundHint: 'You can close this — EDITH will notify you when it’s done.',
       slowProviderHint: 'This can take several minutes',
       remix: 'Remix',
       remixConfirmTitle: 'Remix this look?',
@@ -1439,7 +1439,7 @@ export const en: Translations = {
     },
     nav: {
       newChat: { title: 'New session', detail: 'Start a fresh session' },
-      settings: { title: 'Settings', detail: 'Configure Jimmy desktop' },
+      settings: { title: 'Settings', detail: 'Configure EDITH desktop' },
       skills: { title: 'Capabilities', detail: 'Skills, tools, and MCP servers' },
       messaging: { title: 'Messaging', detail: 'Set up Telegram, Slack, Discord, and more' },
       artifacts: { title: 'Artifacts', detail: 'Browse generated outputs' }
@@ -1461,11 +1461,11 @@ export const en: Translations = {
     noSessions: 'No sessions yet.',
     gatewayRunning: 'Messaging gateway running',
     gatewayStopped: 'Messaging gateway stopped',
-    hermesActiveSessions: (version, count) => `Jimmy ${version} · Active sessions ${count}`,
+    hermesActiveSessions: (version, count) => `EDITH ${version} · Active sessions ${count}`,
     restartGateway: 'Restart gateway',
     openBrowser: 'Open browser',
     gatewayRestartFailed: 'Gateway restart failed.',
-    updateHermes: 'Update Jimmy',
+    updateHermes: 'Update EDITH',
     reloadWindow: 'Reload window',
     actionRunning: 'running',
     actionDone: 'done',
@@ -1814,7 +1814,7 @@ export const en: Translations = {
     deleteDescMid: ' and remove its ',
     deleteDescSuffix: ' directory. This cannot be undone.',
     deleting: 'Deleting...',
-    createDesc: 'Profiles are independent Jimmy environments: separate config, skills, and SOUL.md.',
+    createDesc: 'Profiles are independent EDITH environments: separate config, skills, and SOUL.md.',
     nameLabel: 'Name',
     cloneFrom: 'Clone from',
     cloneFromNone: 'None (blank)',
@@ -1857,7 +1857,7 @@ export const en: Translations = {
         `${count} scheduled ${count === 1 ? 'job' : 'jobs'} will be skipped until you review their model settings.`,
       detailMore: (names, remaining) => `${names} and ${remaining} more`,
       review: 'Review scheduled jobs',
-      saveFailed: 'Jimmy did not save that model change.'
+      saveFailed: 'EDITH did not save that model change.'
     },
     search: 'Search cron jobs...',
     loading: 'Loading cron jobs...',
@@ -1914,7 +1914,7 @@ export const en: Translations = {
     everyHourAt: minute => `Every hour at :${minute}`,
     newCron: 'New cron',
     emptyDescNew:
-      'Schedule a prompt to run on a cron expression. Jimmy will run it and deliver results to the destination you pick.',
+      'Schedule a prompt to run on a cron expression. EDITH will run it and deliver results to the destination you pick.',
     emptyDescSearch: 'Try a broader search query.',
     emptyTitleNew: 'No scheduled jobs yet',
     emptyTitleSearch: 'No matches',
@@ -2110,8 +2110,8 @@ export const en: Translations = {
       removeFromSidebar: 'Hide from sidebar',
       createFailed: 'Could not create project',
       staleBackend:
-        'Update the Jimmy backend to create projects — your backend is older than this desktop app (Settings → Updates → Backend).',
-      deleteConfirm: 'This removes the saved project from Jimmy. Files, git repos, and worktrees stay untouched.',
+        'Update the EDITH backend to create projects — your backend is older than this desktop app (Settings → Updates → Backend).',
+      deleteConfirm: 'This removes the saved project from EDITH. Files, git repos, and worktrees stay untouched.',
       startWork: 'New worktree',
       newWorktreeTitle: 'New worktree',
       newWorktreeDesc: 'Name the branch for this worktree.',
@@ -2121,7 +2121,7 @@ export const en: Translations = {
       baseBranchNone: 'No branches found',
       startWorkFailed: 'Could not create worktree',
       worktreeStaleBackend:
-        'Update the Jimmy backend to create worktrees over this remote connection — it predates the git worktree API.',
+        'Update the EDITH backend to create worktrees over this remote connection — it predates the git worktree API.',
       worktreeProjectLabel: 'Project',
       worktreeProjectPlaceholder: 'Search projects…',
       worktreeProjectNone: 'No projects with a folder',
@@ -2215,12 +2215,12 @@ export const en: Translations = {
   composer: {
     message: 'Message',
     wakingProfile: profile => `Waking up ${profile}…`,
-    placeholderStarting: 'Starting Jimmy...',
-    placeholderReconnecting: 'Reconnecting to Jimmy…',
+    placeholderStarting: 'Starting EDITH...',
+    placeholderReconnecting: 'Reconnecting to EDITH…',
     placeholderFollowUp: 'Send follow-up',
     newSessionPlaceholders: [
       'What are we building?',
-      'Give Jimmy a task',
+      'Give EDITH a task',
       "What's on your mind?",
       'Describe what you need',
       'What should we tackle?',
@@ -2288,7 +2288,7 @@ export const en: Translations = {
       'composer.history': 'cycle popover / history'
     },
     attachUrlTitle: 'Attach a URL',
-    attachUrlDesc: 'Jimmy will fetch the page and include it as context for this turn.',
+    attachUrlDesc: 'EDITH will fetch the page and include it as context for this turn.',
     urlPlaceholder: 'https://example.com/post',
     urlHintPre: 'Include the full URL, e.g. ',
     attach: 'Attach',
@@ -2438,7 +2438,7 @@ export const en: Translations = {
       createPr: 'Create PR',
       openPr: 'Open PR',
       ghMissing: 'Install the GitHub CLI (gh) and sign in to open PRs',
-      agentShip: 'Ask Jimmy to open PR',
+      agentShip: 'Ask EDITH to open PR',
       agentShipUnavailable: "The chat that owns these changes isn't on screen.",
       agentShipPrompt:
         'Review the current changes, commit them with a clear conventional-commit message, push the branch, and open a pull request.',
@@ -2457,9 +2457,9 @@ export const en: Translations = {
       fetch: 'Downloading…',
       pull: 'Almost there…',
       pydeps: 'Finishing up…',
-      update: 'Updating Jimmy…',
+      update: 'Updating EDITH…',
       rebuild: 'Rebuilding the desktop app…',
-      restart: 'Restarting Jimmy…',
+      restart: 'Restarting EDITH…',
       done: 'Update complete',
       manual: 'Update from your terminal',
       guiSkew: 'Update the desktop app',
@@ -2469,43 +2469,43 @@ export const en: Translations = {
     checkFailedTitle: 'Couldn’t check for updates',
     tryAgain: 'Try again',
     notAvailableTitle: 'Update not available',
-    unsupportedMessage: 'This version of Jimmy can’t update itself from inside the app.',
+    unsupportedMessage: 'This version of EDITH can’t update itself from inside the app.',
     connectionRetry: 'Check your connection and try again.',
     latestBody: 'You’re running the latest version.',
     latestBodyBackend: 'The backend is running the latest version.',
     allSetTitle: 'You’re all set',
     availableTitle: 'New update available',
-    availableBody: 'A new version of Jimmy is ready to install.',
+    availableBody: 'A new version of EDITH is ready to install.',
     availableTitleBackend: 'Backend update available',
-    availableBodyBackend: 'A newer version of the connected Jimmy backend is ready to install.',
+    availableBodyBackend: 'A newer version of the connected EDITH backend is ready to install.',
     availableBodyNoChangelog: 'A newer version is ready. Release notes aren’t available for this install type.',
     updateNow: 'Update now',
     maybeLater: 'Maybe later',
     moreChanges: count => `+ ${count} more change${count === 1 ? '' : 's'} included.`,
     manualTitle: 'Update from your terminal',
-    manualBody: 'You installed Jimmy from the command line, so updates run there too. Paste this into your terminal:',
-    manualPickedUp: 'Jimmy will pick up the new version next time you launch it.',
+    manualBody: 'You installed EDITH from the command line, so updates run there too. Paste this into your terminal:',
+    manualPickedUp: 'EDITH will pick up the new version next time you launch it.',
     guiSkewTitle: 'Update the desktop app',
     guiSkewBody:
-      'The backend was updated, but this desktop app package wasn’t changed. Update or reinstall the Jimmy desktop app (your AppImage / .deb / .rpm) to match.',
+      'The backend was updated, but this desktop app package wasn’t changed. Update or reinstall the EDITH desktop app (your AppImage / .deb / .rpm) to match.',
     copy: 'Copy',
     copied: 'Copied',
     done: 'Done',
     applyingBody:
-      'The Jimmy updater takes over in its own window and reopens Jimmy automatically when it’s done. Please don’t reopen Jimmy yourself while it’s updating.',
+      'The EDITH updater takes over in its own window and reopens EDITH automatically when it’s done. Please don’t reopen EDITH yourself while it’s updating.',
     applyingBodyBackend:
-      'The remote backend is applying the update and will restart. Jimmy reconnects automatically when it’s back.',
-    applyingClose: 'This window will close while the update runs, then Jimmy reopens on its own.',
+      'The remote backend is applying the update and will restart. EDITH reconnects automatically when it’s back.',
+    applyingClose: 'This window will close while the update runs, then EDITH reopens on its own.',
     errorTitle: 'Update didn’t finish',
     errorBody: 'No worries — nothing was lost. You can try again now.',
-    blockerTitle: 'Close local previews to update Jimmy?',
+    blockerTitle: 'Close local previews to update EDITH?',
     blockerBody:
-      'Jimmy needs to stop these local previews before updating. This will not modify or delete your files.',
-    foreignBlockerTitle: 'Close other processes to update Jimmy',
+      'EDITH needs to stop these local previews before updating. This will not modify or delete your files.',
+    foreignBlockerTitle: 'Close other processes to update EDITH',
     foreignBlockerBody:
-      'Jimmy can’t safely close these processes automatically. Close the app, terminal, or service that owns each one, then try the update again.',
+      'EDITH can’t safely close these processes automatically. Close the app, terminal, or service that owns each one, then try the update again.',
     mixedBlockerBody:
-      'Jimmy can close the local previews listed below. Other processes must be closed manually before the update can continue.',
+      'EDITH can close the local previews listed below. Other processes must be closed manually before the update can continue.',
     closePreviewsAndUpdate: 'Close previews and update',
     closePreviewsAndCheckAgain: 'Close previews and check again',
     localPreview: 'Local preview',
@@ -2539,7 +2539,7 @@ export const en: Translations = {
       skipped: 'Skipped',
       failed: 'Failed'
     },
-    oneTimeTitle: 'Jimmy needs a one-time install',
+    oneTimeTitle: 'EDITH needs a one-time install',
     unsupportedDesc: platform =>
       `Automated first-launch install isn’t available on ${platform} yet. Open Terminal and run the command below, then relaunch this app. Subsequent launches will skip this step.`,
     installCommand: 'Install command',
@@ -2547,22 +2547,22 @@ export const en: Translations = {
     viewDocs: 'View install docs',
     installTo: 'Will install to',
     retryAfterRun: 'I’ve run it -- retry',
-    setupChoiceTitle: 'Set up Jimmy Desktop',
+    setupChoiceTitle: 'Set up EDITH Desktop',
     setupChoiceDesc:
-      'Connect this app to a Jimmy gateway you already run, or install Jimmy locally on this computer.',
-    connectExistingTitle: 'Connect to existing Jimmy',
+      'Connect this app to a EDITH gateway you already run, or install EDITH locally on this computer.',
+    connectExistingTitle: 'Connect to existing EDITH',
     connectExistingShort: 'Connect existing',
     connectExistingDesc: 'Use a remote backend with a session token or browser sign-in. No local install will start.',
-    installLocalTitle: 'Install Jimmy locally',
-    installLocalDesc: 'Download Jimmy, create its Python environment, and run the backend on this computer.',
-    localStartUnavailable: 'Local installation could not start. Restart Jimmy Desktop and try again.',
-    remoteSetupTitle: 'Connect to existing Jimmy',
-    remoteSetupDesc: 'Enter your gateway URL. Jimmy Desktop will detect whether it needs a token or browser sign-in.',
+    installLocalTitle: 'Install EDITH locally',
+    installLocalDesc: 'Download EDITH, create its Python environment, and run the backend on this computer.',
+    localStartUnavailable: 'Local installation could not start. Restart EDITH Desktop and try again.',
+    remoteSetupTitle: 'Connect to existing EDITH',
+    remoteSetupDesc: 'Enter your gateway URL. EDITH Desktop will detect whether it needs a token or browser sign-in.',
     remoteUrlTitle: 'Gateway URL',
-    remoteUrlDesc: 'Use the base URL of the Jimmy gateway, including https:// when remote.',
+    remoteUrlDesc: 'Use the base URL of the EDITH gateway, including https:// when remote.',
     remoteUrlPlaceholder: 'https://gateway.example.com/hermes',
     probing: 'Detecting gateway authentication...',
-    probeError: 'Could not reach that Jimmy gateway.',
+    probeError: 'Could not reach that EDITH gateway.',
     identityProvider: 'your identity provider',
     authTitle: 'Authentication',
     authNeedsOauth: provider => `Sign in with ${provider} before testing this gateway.`,
@@ -2582,12 +2582,12 @@ export const en: Translations = {
     applyRemote: 'Apply and reconnect',
     backToSetup: 'Back',
     failedTitle: 'Installation failed',
-    settingUpTitle: 'Setting up Jimmy',
+    settingUpTitle: 'Setting up EDITH',
     finishingTitle: 'Finishing up',
     failedDesc:
-      'One of the install steps failed. On Windows, this can happen if another Jimmy CLI or desktop instance is running. Stop any running Jimmy instances, then retry. Check the details below or the desktop log for the full transcript.',
+      'One of the install steps failed. On Windows, this can happen if another EDITH CLI or desktop instance is running. Stop any running EDITH instances, then retry. Check the details below or the desktop log for the full transcript.',
     activeDesc:
-      'This is a one-time setup. The Jimmy installer is downloading dependencies and configuring your machine. Subsequent launches will skip this step.',
+      'This is a one-time setup. The EDITH installer is downloading dependencies and configuring your machine. Subsequent launches will skip this step.',
     progress: (completed, total) => `${completed} of ${total} steps complete`,
     currentStage: stage => ` -- now: ${stage}`,
     fetchingManifest: 'Fetching installer manifest...',
@@ -2605,10 +2605,10 @@ export const en: Translations = {
   },
 
   onboarding: {
-    headerTitle: "Let's get you setup with Jimmy",
+    headerTitle: "Let's get you setup with EDITH",
     headerDesc: 'Connect a model provider to start chatting. Most options take one click.',
-    preparingInstall: 'Jimmy is finishing install. This usually takes under a minute on first run.',
-    starting: 'Starting Jimmy…',
+    preparingInstall: 'EDITH is finishing install. This usually takes under a minute on first run.',
+    starting: 'Starting EDITH…',
     lookingUpProviders: 'Looking up providers...',
     collapse: 'Collapse',
     otherProviders: 'Other providers',
@@ -2616,7 +2616,7 @@ export const en: Translations = {
     chooseLater: "I'll choose a provider later",
     recommended: 'Recommended',
     connected: 'Connected',
-    featuredPitch: 'One subscription, 300+ frontier models — the recommended way to run Jimmy',
+    featuredPitch: 'One subscription, 300+ frontier models — the recommended way to run EDITH',
     fireworksPitch: 'Direct model API — Fireworks-hosted frontier models',
     openRouterPitch: 'One key, hundreds of models — a solid default',
     apiKeyOptions: {
@@ -2633,7 +2633,7 @@ export const en: Translations = {
       xai: { short: 'Grok models', description: 'Direct access to xAI Grok models.' },
       local: {
         short: 'self-hosted',
-        description: 'Point Jimmy at a local or self-hosted OpenAI-compatible endpoint (vLLM, llama.cpp, Ollama, etc).'
+        description: 'Point EDITH at a local or self-hosted OpenAI-compatible endpoint (vLLM, llama.cpp, Ollama, etc).'
       }
     },
     backToSignIn: 'Back to sign in',
@@ -2646,7 +2646,7 @@ export const en: Translations = {
     update: 'Update',
     flowSubtitles: {
       pkce: 'Opens your browser to sign in, then continues here',
-      device_code: 'Opens a verification page in your browser — Jimmy connects automatically',
+      device_code: 'Opens a verification page in your browser — EDITH connects automatically',
       external: 'Sign in once in your terminal, then come back to chat'
     },
     startingSignIn: provider => `Starting sign-in for ${provider}...`,
@@ -2657,12 +2657,12 @@ export const en: Translations = {
     pickDifferentProvider: 'Pick a different provider',
     signInWith: provider => `Sign in with ${provider}`,
     openedBrowser: provider => `We opened ${provider} in your browser.`,
-    authorizeThere: 'Authorize Jimmy there.',
+    authorizeThere: 'Authorize EDITH there.',
     copyAuthCode: 'Copy the authorization code and paste it below.',
     pasteAuthCode: 'Paste authorization code',
     reopenAuthPage: 'Re-open authorization page',
     autoBrowser: provider =>
-      `We opened ${provider} in your browser. Authorize Jimmy there and you'll be connected automatically — nothing to copy or paste.`,
+      `We opened ${provider} in your browser. Authorize EDITH there and you'll be connected automatically — nothing to copy or paste.`,
     reopenSignInPage: 'Re-open sign-in page',
     waitingAuthorize: 'Waiting for you to authorize...',
     externalPending: provider =>
@@ -2764,13 +2764,13 @@ export const en: Translations = {
       update: 'update',
       updateInProgress: 'Update in progress',
       commitsBehind: (count, branch) => `${count} commit${count === 1 ? '' : 's'} behind ${branch}`,
-      desktopVersion: version => `Jimmy Desktop v${version}`,
+      desktopVersion: version => `EDITH Desktop v${version}`,
       backendVersion: version => `Backend v${version}`,
       clientLabel: version => `client v${version}`,
       connectionSsh: host => `SSH: ${host}`,
       connectionRemote: host => `Remote: ${host}`,
       connectionCloud: host => `Cloud: ${host}`,
-      connectionCloudTooltip: host => `Jimmy Cloud · ${host}`,
+      connectionCloudTooltip: host => `EDITH Cloud · ${host}`,
       connectionSshTooltip: host => `SSH · ${host}`,
       connectionRemoteTooltip: host => `Remote · ${host}`,
       backendLabel: version => `backend v${version}`,
@@ -2899,7 +2899,7 @@ export const en: Translations = {
     binaryTitle: 'This looks like a binary file',
     binaryBody: label => `Previewing ${label} may show unreadable text.`,
     largeTitle: 'This file is large',
-    largeBody: (label, size) => `${label} is ${size}. Jimmy will only show the first 512 KB.`,
+    largeBody: (label, size) => `${label} is ${size}. EDITH will only show the first 512 KB.`,
     previewAnyway: 'Preview anyway',
     truncated: 'Showing first 512 KB.',
     noInlineTitle: 'No inline preview',
@@ -2940,11 +2940,11 @@ export const en: Translations = {
         'This address points at the machine running your agent, not this one. The browser pane loads pages locally, so a remote dev server needs a port forward or a reachable hostname.',
       failedToLoad: 'Preview failed to load',
       tryAgain: 'Try again',
-      restarting: 'Jimmy is restarting...',
-      askRestart: 'Ask Jimmy to restart the server',
-      lookingRestart: taskId => `Jimmy is looking for a preview server to restart (${taskId})`,
+      restarting: 'EDITH is restarting...',
+      askRestart: 'Ask EDITH to restart the server',
+      lookingRestart: taskId => `EDITH is looking for a preview server to restart (${taskId})`,
       restartingTitle: 'Restarting preview server',
-      restartingMessage: 'Jimmy is working in the background. Watch the preview console for progress.',
+      restartingMessage: 'EDITH is working in the background. Watch the preview console for progress.',
       startRestartFailed: message => `Could not start server restart: ${message}`,
       restartFailed: 'Server restart failed',
       hideConsole: 'Hide preview console',
@@ -2956,16 +2956,16 @@ export const en: Translations = {
       reload: 'Reload page',
       address: 'Address',
       addressPlaceholder: 'Enter address',
-      blankPageBody: 'Type an address above to browse, or ask Jimmy to open a page.',
-      finishedRestarting: message => `Jimmy finished restarting the preview server${message ? `: ${message}` : ''}`,
+      blankPageBody: 'Type an address above to browse, or ask EDITH to open a page.',
+      finishedRestarting: message => `EDITH finished restarting the preview server${message ? `: ${message}` : ''}`,
       failedRestarting: message => `Server restart failed: ${message}`,
       unknownError: 'unknown error',
       restartedTitle: 'Preview server restarted',
       reloadingNow: 'Reloading the preview now.',
       restartFailedTitle: 'Preview restart failed',
-      restartFailedMessage: 'Jimmy could not restart the server.',
+      restartFailedMessage: 'EDITH could not restart the server.',
       stillWorking:
-        'Jimmy is still working, but no restart result has arrived yet. The server command may be running in the foreground.',
+        'EDITH is still working, but no restart result has arrived yet. The server command may be running in the foreground.',
       workspaceReloading: 'Workspace changed, reloading preview',
       fileChanged: url => `File changed, reloading preview: ${url}`,
       filesChanged: (count, url) => `${count} file changes, reloading preview: ${url}`,
@@ -3055,7 +3055,7 @@ export const en: Translations = {
     thread: {
       loadingSession: 'Loading session',
       showEarlier: 'Show earlier messages',
-      loadingResponse: 'Jimmy is loading a response',
+      loadingResponse: 'EDITH is loading a response',
       resumeWhenBackgroundDone: count =>
         count === 1
           ? 'Will resume when the background task finishes'
@@ -3096,7 +3096,7 @@ export const en: Translations = {
       attachingFile: 'Attaching…'
     },
     approval: {
-      gatewayDisconnected: 'Jimmy gateway is not connected',
+      gatewayDisconnected: 'EDITH gateway is not connected',
       sendFailed: 'Could not send approval response',
       run: 'Run',
       command: 'Command',
@@ -3107,12 +3107,12 @@ export const en: Translations = {
       reject: 'Reject',
       alwaysTitle: 'Always allow this command?',
       alwaysDescription: pattern =>
-        `This adds the “${pattern}” pattern to your permanent allowlist (~/.hermes/config.yaml). Jimmy won’t ask again for commands like this — in this session or any future one.`,
+        `This adds the “${pattern}” pattern to your permanent allowlist (~/.hermes/config.yaml). EDITH won’t ask again for commands like this — in this session or any future one.`,
       alwaysAllow: 'Always allow'
     },
     clarify: {
       notReady: 'Clarify request is not ready yet',
-      gatewayDisconnected: 'Jimmy gateway is not connected',
+      gatewayDisconnected: 'EDITH gateway is not connected',
       sendFailed: 'Could not send clarify response',
       loadingQuestion: 'Loading question…',
       other: 'Other (type your answer)',
@@ -3147,7 +3147,7 @@ export const en: Translations = {
       envRequired: 'Fill in the required credentials first',
       sendFailed: 'Could not send MCP setup response',
       reloadFailed: 'Server saved, but reloading MCP tools failed — they load next session',
-      gatewayDisconnected: 'Jimmy gateway is not connected'
+      gatewayDisconnected: 'EDITH gateway is not connected'
     },
     tool: {
       copyCode: 'Copy code',
@@ -3238,14 +3238,14 @@ export const en: Translations = {
   },
 
   prompts: {
-    gatewayDisconnected: 'Jimmy gateway is not connected',
+    gatewayDisconnected: 'EDITH gateway is not connected',
     sudoSendFailed: 'Could not send sudo password',
     secretSendFailed: 'Could not send secret',
     sudoTitle: 'Administrator password',
-    sudoDesc: 'Jimmy needs your sudo password to run a privileged command. It is sent only to your local agent.',
+    sudoDesc: 'EDITH needs your sudo password to run a privileged command. It is sent only to your local agent.',
     sudoPlaceholder: 'sudo password',
     secretTitle: 'Secret required',
-    secretDesc: 'Jimmy needs a credential to continue.',
+    secretDesc: 'EDITH needs a credential to continue.',
     secretPlaceholder: 'secret value'
   },
 
@@ -3298,8 +3298,8 @@ export const en: Translations = {
     sessionExportFailed: 'Could not export session',
     imageSaved: 'Image saved',
     downloadStarted: 'Download started',
-    restartToUseSaveImage: 'Restart Jimmy Desktop to use Save Image.',
-    restartToSaveImages: 'Restart Jimmy Desktop to save images',
+    restartToUseSaveImage: 'Restart EDITH Desktop to use Save Image.',
+    restartToSaveImages: 'Restart EDITH Desktop to save images',
     imageDownloadFailed: 'Image download failed',
     openImage: 'Open image',
     downloadImage: 'Download image',

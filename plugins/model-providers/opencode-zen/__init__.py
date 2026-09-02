@@ -22,7 +22,7 @@ from providers.base import ProviderProfile
 # "OpenAI/Python x.y.z" User-Agent and can't tell the traffic is Hermes Agent.
 _ATTRIBUTION_HEADERS = {
     "HTTP-Referer": "https://hermes-agent.nousresearch.com",
-    "X-Title": "Hermes Agent",
+    "X-Title": "EDITH",
     "User-Agent": f"HermesAgent/{_HERMES_VERSION}",
 }
 

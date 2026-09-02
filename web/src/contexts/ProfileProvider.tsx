@@ -20,8 +20,8 @@ import { ProfileContext } from "@/contexts/profile-context";
  * endpoint families. "" = the dashboard's own profile.
  *
  * When ``/api/auth/me`` returns a non-empty ``profile``, that value is
- * locked for the session (Jimmy multi-user): the switcher is hidden and
- * ``setProfile`` is a no-op so users cannot open another Jimmy's chats.
+ * locked for the session (EDITH multi-user): the switcher is hidden and
+ * ``setProfile`` is a no-op so users cannot open another EDITH's chats.
  */
 export function ProfileProvider({ children }: { children: ReactNode }) {
   const [searchParams, setSearchParams] = useSearchParams();

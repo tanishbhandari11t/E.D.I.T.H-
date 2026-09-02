@@ -706,7 +706,7 @@ class CopilotACPClient:
                     },
                     "clientInfo": {
                         "name": "hermes-agent",
-                        "title": "Hermes Agent",
+                        "title": "EDITH",
                         "version": "0.0.0",
                     },
                 },

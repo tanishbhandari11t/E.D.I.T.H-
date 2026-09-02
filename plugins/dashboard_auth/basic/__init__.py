@@ -516,7 +516,7 @@ def _normalize_user_entries(raw_users: Any, section: dict) -> list[dict[str, str
             }
         ]
 
-    # Jimmy Azure convenience: JIMMY1_PASSWORD … JIMMY4_PASSWORD
+    # EDITH Azure convenience: JIMMY1_PASSWORD … JIMMY4_PASSWORD
     for i in range(1, 5):
         pw = os.environ.get(f"JIMMY{i}_PASSWORD", "").strip()
         if not pw:

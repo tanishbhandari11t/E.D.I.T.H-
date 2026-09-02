@@ -1,5 +1,5 @@
 """
-Jimmy — Web UI server.
+EDITH — Web UI server.
 
 Provides a FastAPI backend serving the Vite/React frontend and REST API
 endpoints for managing configuration, environment variables, and sessions.
@@ -478,7 +478,7 @@ def _get_pty_active_session_files(app: "FastAPI") -> dict[str, Path]:
         return app.state.pty_active_session_files
 
 
-app = FastAPI(title="Jimmy", version=__version__, lifespan=_lifespan)
+app = FastAPI(title="EDITH", version=__version__, lifespan=_lifespan)
 
 
 # Memory-provider OAuth connect routes live in the memory layer, not here.
@@ -9861,7 +9861,7 @@ async def _telegram_onboarding_request(
 
 @app.post("/api/messaging/telegram/onboarding/start")
 async def start_telegram_onboarding(body: TelegramOnboardingStart):
-    bot_name = (body.bot_name or "Jimmy").strip() or "Jimmy"
+    bot_name = (body.bot_name or "EDITH").strip() or "EDITH"
     payload = await _telegram_onboarding_request(
         "POST",
         "/v1/telegram/pairings",

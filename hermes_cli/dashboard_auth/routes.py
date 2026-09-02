@@ -669,7 +669,7 @@ def _password_rate_limited(ip: str) -> bool:
     throttling rather than letting unattributable traffic through
     unmetered.
 
-    Disabled when ``JIMMY_DISABLE_LOGIN_RATE_LIMIT=1`` (Jimmy Azure: fixed
+    Disabled when ``JIMMY_DISABLE_LOGIN_RATE_LIMIT=1`` (EDITH Azure: fixed
     4-user set; login retries must not lock people out).
     """
     if os.environ.get("JIMMY_DISABLE_LOGIN_RATE_LIMIT", "").strip().lower() in (

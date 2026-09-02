@@ -29,7 +29,7 @@ fireworks = ProviderProfile(
     # credential rotation.
     default_headers={
         "HTTP-Referer": "https://hermes-agent.nousresearch.com",
-        "X-Title": "Hermes Agent",
+        "X-Title": "EDITH",
         "User-Agent": f"HermesAgent/{_HERMES_VERSION}",
     },
     # Auxiliary model for cheap tasks (compaction, title generation, vision).

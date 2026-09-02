@@ -156,7 +156,7 @@ export function handleStatusEvent(ctx: GatewayEventContext): boolean {
       notify({
         id: `gateway-error:${errorMessage}`,
         kind: 'error',
-        title: 'Jimmy error',
+        title: 'EDITH error',
         message: errorMessage
       })
     }

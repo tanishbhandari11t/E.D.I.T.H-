@@ -2280,11 +2280,11 @@ class CLICommandsMixin:
                     try:
                         from hermes_cli.skin_engine import get_active_skin
                         _skin = get_active_skin()
-                        label = _skin.get_branding("response_label", "Jimmy")
+                        label = _skin.get_branding("response_label", "EDITH")
                         _resp_color = _maybe_remap_for_light_mode(_skin.get_color("response_border", "#CD7F32"))
                         _resp_text = _maybe_remap_for_light_mode(_skin.get_color("banner_text", "#FFF8DC"))
                     except Exception:
-                        label = "Jimmy"
+                        label = "EDITH"
                         _resp_color = "#CD7F32"
                         _resp_text = "#FFF8DC"
 
@@ -3765,7 +3765,7 @@ class CLICommandsMixin:
         run_debug_share(args)
 
     def _handle_update_command(self) -> bool:
-        """Handle /update — update Jimmy to the latest version.
+        """Handle /update — update EDITH to the latest version.
 
         In the classic CLI this exits the session and relaunches as
         ``hermes update`` so the user sees update output directly and gets
@@ -3779,7 +3779,7 @@ class CLICommandsMixin:
         from hermes_cli.config import is_managed, format_managed_message
 
         if is_managed():
-            print(f"  ✗ {format_managed_message('update Jimmy')}")
+            print(f"  ✗ {format_managed_message('update EDITH')}")
             return False
 
         # Use the prompt_toolkit-native modal so the confirmation panel
@@ -3787,11 +3787,11 @@ class CLICommandsMixin:
         # with the prompt_toolkit event loop (same pattern as
         # _confirm_destructive_slash).
         choices = [
-            ("once", "Update Now", "exit the current session and update Jimmy"),
+            ("once", "Update Now", "exit the current session and update EDITH"),
             ("cancel", "Cancel", "keep the current session"),
         ]
         raw = self._prompt_text_input_modal(
-            title="⚕  Update Jimmy",
+            title="⚕  Update EDITH",
             detail="This will exit the current session and run `hermes update`.",
             choices=choices,
         )

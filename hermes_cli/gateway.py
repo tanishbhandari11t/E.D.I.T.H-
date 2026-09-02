@@ -2078,7 +2078,7 @@ def _windows_gateway_breakaway_state() -> bool | None:
 # =============================================================================
 
 _SERVICE_BASE = "hermes-gateway"
-SERVICE_DESCRIPTION = "Jimmy Gateway - Messaging Platform Integration"
+SERVICE_DESCRIPTION = "EDITH Gateway - Messaging Platform Integration"
 
 
 def _profile_suffix() -> str:
@@ -5616,7 +5616,7 @@ def run_gateway(verbose: int = 0, quiet: bool = False, replace: bool = False, fo
     from gateway.run import start_gateway
 
     print("┌─────────────────────────────────────────────────────────┐")
-    print("│           ⚕ Jimmy Gateway Starting...                  │")
+    print("│           ⚕ EDITH Gateway Starting...                  │")
     print("├─────────────────────────────────────────────────────────┤")
     print("│  Messaging platforms + cron scheduler                    │")
     print("│  Press Ctrl+C to stop                                   │")

@@ -51,11 +51,11 @@ export default function ProgressScreen({ bootstrap }: ProgressProps) {
   }, [bootstrap.status])
 
   const isUpdate = mode === 'update'
-  const title = bootstrap.status === 'completed' ? 'Done' : isUpdate ? 'Updating Jimmy' : 'Setting up Jimmy'
+  const title = bootstrap.status === 'completed' ? 'Done' : isUpdate ? 'Updating EDITH' : 'Setting up EDITH'
 
   const description = isUpdate
-    ? 'Jimmy is updating to the latest version — this only takes a moment.'
-    : 'This is a one-time setup. The Jimmy installer is downloading dependencies and configuring your machine. Subsequent launches will skip this step.'
+    ? 'EDITH is updating to the latest version — this only takes a moment.'
+    : 'This is a one-time setup. The EDITH installer is downloading dependencies and configuring your machine. Subsequent launches will skip this step.'
 
   const pct = Math.round(progress.fraction * 100)
 

@@ -181,7 +181,7 @@ def is_interactive_stdin() -> bool:
 def print_noninteractive_setup_guidance(reason: str | None = None) -> None:
     """Print guidance for headless/non-interactive setup flows."""
     print()
-    print(color("⚕ Jimmy Setup — Non-interactive mode", Colors.CYAN, Colors.BOLD))
+    print(color("⚕ EDITH Setup — Non-interactive mode", Colors.CYAN, Colors.BOLD))
     print()
     if reason:
         print_info(reason)
@@ -2795,7 +2795,7 @@ def run_setup_wizard(args):
                         Colors.MAGENTA,
                     )
                 )
-                print(color(f"│     ⚕ Jimmy Setup — {label:<34s} │", Colors.MAGENTA))
+                print(color(f"│     ⚕ EDITH Setup — {label:<34s} │", Colors.MAGENTA))
                 print(
                     color(
                         "└─────────────────────────────────────────────────────────┘",
@@ -2831,7 +2831,7 @@ def run_setup_wizard(args):
     )
     print(
         color(
-            "│             ⚕ Jimmy Setup Wizard                       │", Colors.MAGENTA
+            "│             ⚕ EDITH Setup Wizard                       │", Colors.MAGENTA
         )
     )
     print(
@@ -2842,7 +2842,7 @@ def run_setup_wizard(args):
     )
     print(
         color(
-            "│  Let's configure your Jimmy installation.              │", Colors.MAGENTA
+            "│  Let's configure your EDITH installation.              │", Colors.MAGENTA
         )
     )
     print(
